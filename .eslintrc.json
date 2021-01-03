@@ -20,7 +20,11 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "no-underscore-dangle":"off",
     "class-methods-use-this": "off",
+    "@typescript-eslint/no-unused-var": ["error", {
+      "argsIgnorePattern": "_"
+    }],
     "import/extensions": [
       "error",
       "ignorePackages",
