@@ -3,9 +3,9 @@ import {
 } from 'express';
 import { verify } from 'jsonwebtoken';
 
-import authConfig from '../config/auth';
+import authConfig from '@config/auth';
 
-import AppError from '../errors/AppError';
+import AppError from '@shared/errors/AppError';
 
 interface TokenPayload {
   iat: number;
@@ -13,7 +13,7 @@ interface TokenPayload {
   sub: string;
 }
 
-export default function esureAuthenticated(req: Request, res: Response, next: NextFunction): void {
+export default function ensureAuthenticated(req: Request, res: Response, next: NextFunction): void {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {

@@ -20,11 +20,19 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "no-underscore-dangle":"off",
+    "typescript-eslint/no-extra-semi": [
+      "off"
+    ],
+    "camelcase": "off",
+    "no-useless-constructor": "off",
+    "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
-    "@typescript-eslint/no-unused-vars": ["error", {
-      "argsIgnorePattern": "_"
-    }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "_"
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
