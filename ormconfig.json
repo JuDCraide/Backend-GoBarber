@@ -6,7 +6,7 @@
     "password": "docker",
     "database": "gostack_gobarber",
     "entities": [
-        "C:/GoStack/nivel02/Primeiro projeto com Node.JS/backend/src/modules/**/infra/typeorm/entities/User.ts"
+        "C:/GoStack/nivel02/Primeiro projeto com Node.JS/backend/src/modules/**/infra/typeorm/entities/*.ts"
     ],
     "migrations": [
         "./src/shared/infra/typeorm/migrations/*.ts"
