@@ -7,6 +7,16 @@ import ICreateUsersDTO from '@modules/users/dtos/ICreateUserDTO';
 class FakeUsersRepository implements IUsersRepository {
   private users: User[] = [];
 
+  public async listProviders(except_user_id?: string): Promise<User[]> {
+    let wantedUsers = this.users;
+
+    if (except_user_id) {
+      wantedUsers = wantedUsers.filter((u) => u.id !== except_user_id);
+    }
+
+    return wantedUsers;
+  }
+
   public async findByEmail(email: string): Promise<User | undefined> {
     const user = this.users.find((u) => u.email === email);
 
