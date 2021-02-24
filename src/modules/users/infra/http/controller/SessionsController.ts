@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
-import User from '@modules/users/infra/typeorm/entities/User';
 
 export default class SessionsController {
   public async create(req: Request, res: Response): Promise<Response> {
@@ -15,8 +15,6 @@ export default class SessionsController {
       password,
     });
 
-    const noPasswordUser: Omit<User, 'password'> = user;
-
-    return res.json({ noPasswordUser, token });
+    return res.json({ user: classToClass(user), token });
   }
 }

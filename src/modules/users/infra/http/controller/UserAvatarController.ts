@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
-import User from '@modules/users/infra/typeorm/entities/User';
 
 export default class UserAvatarController {
   public async update(req: Request, res: Response): Promise<Response> {
@@ -13,8 +13,6 @@ export default class UserAvatarController {
       avatarFilename: req.file.filename,
     });
 
-    const noPasswordUser: Omit<User, 'password'> = user;
-
-    return res.json(noPasswordUser);
+    return res.json(classToClass(user));
   }
 }
