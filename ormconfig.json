@@ -1,5 +1,5 @@
 [{
-        "name": "dafault",
+        "name": "default",
         "type": "postgres",
         "host": "localhost",
         "port": 5432,
@@ -18,7 +18,7 @@
     },
     {
         "name": "mongo",
-        "type": "mongoDB",
+        "type": "mongodb",
         "host": "localhost",
         "port": 27017,
         "database": "gostack_gobarber",
