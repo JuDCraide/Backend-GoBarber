@@ -14,6 +14,7 @@
     "@types/hapi__joi": "^17.1.6",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "aws-sdk": "^2.851.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^13.0.4",
     "class-transformer": "^0.4.0",
