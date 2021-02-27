@@ -8,7 +8,7 @@ import ISendMailProvider from '@shared/container/providers/MailProvider/dtos/ISe
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 
 @injectable()
-export default class FakeMailProvider implements IMailProvider {
+export default class SESMailProvider implements IMailProvider {
   private client: Transporter;
 
   constructor(
