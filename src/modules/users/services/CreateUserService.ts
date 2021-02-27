@@ -1,4 +1,4 @@
-import { inject, injectable } from 'tsyringe';
+import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 import User from '@modules/users/infra/typeorm/entities/User';
@@ -21,7 +21,7 @@ class CreateUserService {
     private UsersRepository: IUsersRepository,
 
     @inject('HashProvider')
-    private hashProvider:IHashProvider,
+    private hashProvider: IHashProvider,
 
     @inject('CacheProvider')
     private cacheProvider: ICacheProvider,
