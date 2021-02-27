@@ -23,6 +23,17 @@ export default class CacheProvider implements ICacheProvider {
   }
 
   public async invalidade(key: string): Promise<void> {
-    console.log(key);
+    await this.client.del(key);
+  }
+
+  public async invalidadePrefix(prefix: string): Promise<void> {
+    const keys = await this.client.keys(`${prefix}:*`);
+    const pipeline = this.client.pipeline();
+
+    keys.forEach((key) => {
+      pipeline.del(key);
+    });
+
+    await pipeline.exec();
   }
 }
