@@ -22,7 +22,6 @@ class ListProvidersService {
 
     if (!users) {
       users = await this.UsersRepository.listProviders(user_id);
-      console.log('Query foi feita');
 
       await this.cacheProvider.save(
         `providers-list:${user_id}`,
