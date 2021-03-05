@@ -17,7 +17,7 @@ profileRouter.use(ensureAuthenticated);
 
 profileRouter.put('/', celebrate({
   [Segments.BODY]: {
-    name: Joi.string().uuid().required(),
+    name: Joi.string().required(),
     email: Joi.string().email().required(),
     old_password: Joi.string(),
     password: Joi.string(),
