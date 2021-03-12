@@ -5,3 +5,5 @@ temp/.gitkeep
 ormconfig.json
 coverage
 coverage/*
+dist
+dist/*
